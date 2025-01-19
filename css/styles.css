@@ -1,29 +1,56 @@
 body {
-    background: #009578;
+    background: #0a0f1f;
     padding: 20px
 }
+
+h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Subtitle under name */
+h1 + p {
+    color: #94a3b8;
+    font-size: 20px;
+    text-align: center;
+    margin: 8px 0 40px 0;
+}
+
+/* Section titles */
+h2 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 48px 0 24px 0;
+    text-align: center;
+}
+
 /*Button asthetics*/
 .button-pair {
     display: flex;
     justify-content: center;
-    margin: 0px auto;
-    background-color: #2e2e2e; /* Background for the button container */
+    margin: 40px auto;
+    background-color: #1e2634; /* Background for the button container */
     border-radius: 8px;
     padding: 10px;
-    max-width: 1000px;
+    max-width: 800px;
     box-sizing: border-box;
 }
 
 .toggle-button {
     flex: 1;
-    background-color: #2e2e2e;
+    background-color: transparent;
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 24px;
     cursor: pointer;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.2s ease;
 }
 
 .toggle-button.active {
@@ -34,22 +61,17 @@ body {
 
 /*Timeline asthetics*/
 .timeline-container {
-    background: rgba(234, 0, 255, 0.7); /* Dark semi-transparent background */
-    border-radius: 8px; /* Rounded corners */
-    padding: 0px; /* Padding inside the box */
+    background: #151a2d; /* Dark semi-transparent background */
+    border-radius: 12px; /* Rounded corners */
     margin: 20px auto; /* Center the box with top/bottom margin */
-    max-width: 1000px; /* Restrict the width */
+    max-width: 800px; /* Restrict the width */
     position: relative;
-    box-sizing: border-box;
 }
 
 .timeline {
     position: relative; 
-    padding: 25px;
-    margin: 0px auto;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
+    padding: 24px;
+    margin: 0px;
     color: #ffffff;
 }
 
@@ -57,39 +79,50 @@ body {
 .timeline::before {
     content: ""; /* Create the  line */
     position: absolute;
-    left: 75px; /* Align with the center of the logo column */
+    left: 48px; /* Align with the center of the logo column */
     top: 0px;
     bottom: 0px;
-    width: 3px; /* Thickness of the line */
-    background: #e00909; /* Line color */
-    z-index: 0;
+    width: 2px; /* Thickness of the line */
+    background: #2d3552; /* Line color */
+    height: 100%;
 }
 
 .timeline-item {
     display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 30px;
+    align-items: flex-start;
+    padding: 24px 0px;
+    gap: 24px;
     position: relative;
+}
+
+/* First and last timeline items special padding */
+.timeline-item:first-child {
+    padding-top: 0;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
 }
 
 /* Logo/Icons */
 .timeline-logo {
-    width: 75px;
-    height: 75px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     margin-right: 15px;
     object-fit: cover;
-    border: 2px solid #ffffff;
+    border: none;
     z-index: 1;
+    position: relative;
+    background-color: #151a2d;
 }
 
 /* Content box */
 .timeline-content {
-    background: rgba(255, 255, 255, 0.1); 
+    background: #1c2238; 
     padding: 15px;
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 2px 5px #00000033; 
     width: 800px;
     z-index: 1;
 }
@@ -97,27 +130,43 @@ body {
 
 /* Additional styles for text */
 .timeline-content h3 {
-    margin: 0;
-    font-size: 1.2em;
-    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
 }
 
 .timeline-content span {
-    font-size: 0.9em;
-    color: #bbbbbb; /* Grey color for dates */
+    color: #94a3b8;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .timeline-content h4 {
-    margin: 5px 0;
-    font-size: 1em;
-    font-weight: bold;
+    margin: 0px 0px 12px 0px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.timeline-content ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.timeline-content li {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
 }
 
 /* Transition for toggling timelines */
 .hide {
     opacity: 0;
     visibility: hidden;
-    display: none; /* Still use this to remove layout space */
+    display: none; 
 }
 
 .show {
